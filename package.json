@@ -1,0 +1,38 @@
+{
+  "name": "garbanzo",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "tsc -p src -outDir lib",
+    "clean": "rimraf lib build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmptr/garbanzo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmptr/garbanzo/issues"
+  },
+  "homepage": "https://github.com/jmptr/garbanzo#readme",
+  "devDependencies": {
+    "@types/react": "^16.0.2",
+    "ava": "^0.22.0",
+    "rimraf": "^2.6.1",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.6.0",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {
+    "react": "^15.6.1"
+  }
+}
