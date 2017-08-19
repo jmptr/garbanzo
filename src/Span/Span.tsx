@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 export interface ISpanProps {
-  children: React.ReactNode[];
+  children: React.ReactNode;
 }
 
 const Span = (props: ISpanProps) => {
   return (
     <span>
-      {...props.children}
+      {props.children}
     </span>
   );
 };

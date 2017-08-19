@@ -9,9 +9,10 @@
   ],
   "scripts": {
     "prebuild": "npm run clean",
+    "build:docs": "webpack-dev-server --config docs/webpack.dev.js --content-base ./docs --inline",
     "build": "tsc -p src -outDir lib",
     "clean": "rimraf lib build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsc && ava"
   },
   "repository": {
     "type": "git",
@@ -24,15 +25,35 @@
   },
   "homepage": "https://github.com/jmptr/garbanzo#readme",
   "devDependencies": {
+    "@types/enzyme": "^2.8.6",
     "@types/react": "^16.0.2",
+    "@types/react-dom": "^15.5.3",
+    "@types/webpack": "^3.0.9",
     "ava": "^0.22.0",
+    "awesome-typescript-loader": "^3.2.3",
+    "enzyme": "^2.9.1",
+    "html-webpack-plugin": "^2.30.1",
+    "jsdom": "^11.1.0",
+    "react-dom": "^15.6.1",
+    "react-hot-loader": "^1.3.1",
+    "react-test-renderer": "^15.6.1",
     "rimraf": "^2.6.1",
+    "source-map-loader": "^0.2.1",
     "ts-node": "^3.3.0",
     "tslint": "^5.6.0",
+    "tslint-loader": "^3.5.3",
     "tslint-react": "^3.2.0",
-    "typescript": "^2.4.2"
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-manifest-plugin": "^1.3.1"
   },
   "dependencies": {
     "react": "^15.6.1"
+  },
+  "ava": {
+    "require": [
+      "./tools/test.setup.js"
+    ]
   }
 }
