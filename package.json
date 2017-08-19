@@ -12,6 +12,7 @@
     "build:docs": "webpack-dev-server --config docs/webpack.dev.js --content-base ./docs --inline",
     "build": "tsc -p src -outDir lib",
     "clean": "rimraf lib build",
+    "lint": "tslint src/**/*.tsx",
     "test": "tsc && ava"
   },
   "repository": {
