@@ -1,3 +1,2 @@
-# garbanzo
+# react-books-json
 
-A react ui framework written in typescript.

@@ -1,0 +1,68 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "jsdom": false
+  },
+  "rules": {
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "ignorePattern": "^\\s*export|^\\s*const",
+        "ignoreUrls": true
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "exports": "only-multiline",
+        "imports": "only-multiline",
+        "objects": "only-multiline",
+        "functions": "never"
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "arrow-parens": [2, "always"],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-unused-vars": "off",
+    "react/jsx-filename-extension": [ 1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] } ],
+    "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+    "@typescript-eslint/indent": [1, 2],
+    "@typescript-eslint/explicit-function-return-type": [0, { "allowExpressions": true }],
+    "@typescript-eslint/no-explicit-any": [0],
+    "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }]
+  },
+  "overrides": [
+    {
+      "files": ["**.spec.js", "**.spec.ts", , "**.spec.tsx"],
+      "env": {
+        "jest": true
+      },
+      "plugins": [
+        "@typescript-eslint",
+        "jest"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": [0]
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}

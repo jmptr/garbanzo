@@ -1,5 +1,5 @@
-import Span from './Span/Span';
+import Prepare from './prepare';
 
 export {
-  Span,
+  Prepare,
 };

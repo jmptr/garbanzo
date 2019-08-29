@@ -1,23 +1,31 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "declaration": true,
-    "experimentalDecorators": true,
-    "inlineSourceMap": false,
-    "inlineSources": false,
-    "jsx": "react",
-    "module": "commonjs",
+    // Target latest version of ECMAScript.
+    "target": "esnext",
+    // Search under node_modules for non-relative imports.
     "moduleResolution": "node",
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "outDir": "build",
+    // Process & infer types from .js files.
+    "allowJs": true,
+    // Don't emit; allow Babel to transform files.
+    "noEmit": true,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    // Disallow features that require cross-file information for emit.
+    "isolatedModules": true,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    // allow JSX syntax (still requires the module to import react)
+    "jsx": "react",
+    "module": "esnext",
     "sourceMap": true,
-    "target": "es6"
+    "baseUrl": ".",
+    "paths": {
+      "modules/*": [
+        "src/modules/*"
+      ]
+    }
   },
-  "exclude": [
-    "node_modules",
-    "build"
+  "include": [
+    "src"
   ]
 }
